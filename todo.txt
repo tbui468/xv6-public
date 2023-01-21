@@ -1,1 +1,4 @@
+Exercises:
+    Get earliest tag version working, then implement same bug fixes in each commit 
+
 Chapter 0: Operating System Interfaces
