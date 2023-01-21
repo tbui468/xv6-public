@@ -1,4 +1,32 @@
 Exercises:
-    Get earliest tag version working, then implement same bug fixes in each commit 
+    Add script to run program separately from building
+        script/run.sh will run OS with xv6.img and fs.img, BUT
+        fs.img is NOT being created when make is called - make qemu-nox makes fs.img
+            how can we add a script that makes fs.img???? <----------- look here first
+    Change from Makefile to CMake
+        Need to understand build process to see how it all links together
+    Figure out how to call qemu with disk image manually (instead of using 'make qemu-nox')
+        This will allow us to run OS without compiling each time
+    Add more system calls
+        lseek
+        system calls to make editor???
 
 Chapter 0: Operating System Interfaces
+    What does the getcmd() function do?  How does it related to the shell?
+    Does xv6 have mechanisms for different user accounts?
+    Does exec() replace the file descriptor table?
+    Which file descriptor offset is used when a new file is opened?  (How is the number chosen?)
+    What does dup() do?
+    What is the purpose of a pipe?
+    What does mknod() do?
+    How are inodes and links related?
+    What does wc do?
+
+Chapter 1: Operating System Organization
+    What multiplexing, isolation, and interaction mean (with regards to the OS processes)?
+    What is the difference between programs running in user space and kernel space?
+    What are some positive and negative things about monolithic kernels?
+    What is a page table?
+    For xv6, does the kernel need to implement page tables?  
+    What are the two stacks a process maintains?
+    code: the first address space <--------------start here (consider looking at appendix on boot loader too)
