@@ -1,32 +1,34 @@
 Exercises:
-    Add script to run program separately from building
-        script/run.sh will run OS with xv6.img and fs.img, BUT
-        fs.img is NOT being created when make is called - make qemu-nox makes fs.img
-            how can we add a script that makes fs.img???? <----------- look here first
-    Change from Makefile to CMake
-        Need to understand build process to see how it all links together
-    Figure out how to call qemu with disk image manually (instead of using 'make qemu-nox')
-        This will allow us to run OS without compiling each time
-    Add more system calls
+    Add user programs
+        hd - use cat to make a test file to use with hd - easy
+            Echo is ignoring multiple white spaces now...
+            Clean up code for printint and printpad - can we combine both these to eliminate redundant code?
+        pwd - is there a getpwd() syscall we can use? - working with directories 
+        df - check how much space left on disk - checking disk drives
+        date
+        <check if other user programs are fully complete, and if not add to them>
+        ...
+
+    Add system calls
+        creat - very similar to open
         lseek
-        system calls to make editor???
+        truncate(const char* path, int len) - truncate file at path to len
+        <check if other system calls are complete, and if not add to them>
+        ...
+
+    Add functionality to OS
+        Add signals
+        Write driver (for some device QEMU can simulate)
+        Port to x86_64
+        Add user accounts - instead of everyone running as root
+        ...
 
 Chapter 0: Operating System Interfaces
-    What does the getcmd() function do?  How does it related to the shell?
-    Does xv6 have mechanisms for different user accounts?
-    Does exec() replace the file descriptor table?
-    Which file descriptor offset is used when a new file is opened?  (How is the number chosen?)
-    What does dup() do?
-    What is the purpose of a pipe?
-    What does mknod() do?
-    How are inodes and links related?
-    What does wc do?
-
 Chapter 1: Operating System Organization
-    What multiplexing, isolation, and interaction mean (with regards to the OS processes)?
-    What is the difference between programs running in user space and kernel space?
-    What are some positive and negative things about monolithic kernels?
-    What is a page table?
-    For xv6, does the kernel need to implement page tables?  
-    What are the two stacks a process maintains?
-    code: the first address space <--------------start here (consider looking at appendix on boot loader too)
+Chapter 2: Page Tables
+Chapter 3: Traps, Interrupts and Drivers
+Chapter 4: Locking
+Chapter 5: Scheduling
+Chapter 6: File System
+Appendix A: PC Hardware
+Appendix B: The Boot Loader
